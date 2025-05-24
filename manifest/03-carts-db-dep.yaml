@@ -22,7 +22,7 @@ spec:
         version: v0.1.0
     spec:
       containers:
-      - image: mongo
+      - image: mongo:4.4
         name: carts-db
         ports:
         - containerPort: 27017

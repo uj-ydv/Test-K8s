@@ -6,6 +6,10 @@ metadata:
   annotations:
     kubernetes.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
+  tls:
+  - hosts:
+    - weavesocks.ujops.dev
+    secretName: front-end-certificate-secret
   rules:
   - host: weavesocks.ujops.dev
     http:

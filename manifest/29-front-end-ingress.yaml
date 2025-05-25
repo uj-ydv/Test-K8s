@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: front-end-ingress
+  namespace: sock-shop
+  annotations:
+    kubernetes.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  rules:
+  - host: weavesocks.ujops.dev
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: front-end
+              port:
+                number: 80
